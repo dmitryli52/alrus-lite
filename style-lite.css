@@ -85,7 +85,7 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gut); }
 .s-steps p { margin-top: 8px; color: var(--c-ink-soft); font-size: .95rem; }
 
 /* фото */
-.s-photos { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 14px; padding-top: clamp(48px, 7vw, 88px); }
+.s-photos { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; padding-top: clamp(48px, 7vw, 88px); }
 .s-photos figure { margin: 0; }
 .s-photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--r); }
 .s-photos figcaption { font-size: .82rem; color: var(--c-ink-soft); margin-top: 8px; }
