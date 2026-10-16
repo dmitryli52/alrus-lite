@@ -1,16 +1,15 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex, nofollow" data-publish>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>АлРус · Кухни и шкафы на заказ</title>
+<title>АлРус · Мебель на заказ</title>
 <meta name="description" content="Стенд с образцами в шоуруме — видите, как цвета сочетаются между собой, до заказа. Монтажник подключает технику — сантехник не нужен отдельно.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Кухни на заказ в Краснодаре – фасады выбираете вживую">
+<meta property="og:title" content="Мебель на заказ в Краснодаре – фасады выбираете вживую">
 <meta property="og:description" content="Стенд с образцами в шоуруме — видите, как цвета сочетаются между собой, до заказа. Монтажник подключает технику — сантехник не нужен отдельно.">
-<meta property="og:image" content="assets/hero.webp">
-<link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
+<meta property="og:image" content="assets/hero.png">
+<link rel="preload" as="image" href="assets/hero.png" fetchpriority="high">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%276%27 y=%276%27 width=%2720%27 height=%2720%27 rx=%275%27 fill=%27%23d99a3e%27/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/piazzolla-cyr.woff2" as="font" type="font/woff2" crossorigin>
 <style>@font-face { font-family: "Piazzolla"; font-style: normal; font-weight: 500 600; font-display: swap;
@@ -26,6 +25,67 @@
 @font-face { font-family: "Manrope"; font-style: normal; font-weight: 400 600; font-display: swap;
     src: url(assets/fonts/manrope-lat.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212; }
 :root { --c-canvas: #101713; --c-surface: #18211c; --c-ink: #efe9dc; --c-ink-soft: #adb3a6; --c-accent: #d99a3e; --c-accent-ink: #171208; --c-accent-deep: #d99a3e; --f-display: "Piazzolla", "Georgia", "Times New Roman", serif; --f-text: "Manrope", "Segoe UI", system-ui, sans-serif; --h1k: 1; }
+.s-demo-note{margin-top:20px;margin-bottom:28px;padding:14px 18px;border:1px solid color-mix(in srgb,var(--c-accent) 35%,transparent);border-radius:10px;background:color-mix(in srgb,var(--c-accent) 7%,transparent);font-size:.88rem;line-height:1.55;color:var(--c-ink-soft);}
+.s-demo-note b{color:var(--c-ink);}
+/* Gold border ghost buttons */
+.s-bar .s-btn--ghost{border-color:var(--c-accent);}
+.s-dock .s-btn--ghost{border-color:var(--c-accent);}
+/* Shine keyframe + all buttons */
+@keyframes s-btn-shine{0%{transform:skewX(-12deg) translateX(-300%);}60%{transform:skewX(-12deg) translateX(500%);}100%{transform:skewX(-12deg) translateX(500%);}}
+.s-btn{position:relative;overflow:hidden;}
+.s-btn::after{content:'';position:absolute;top:-10%;left:0;width:44px;height:120%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.33),transparent);transform:skewX(-12deg) translateX(-300%);animation:s-btn-shine 1.8s ease-in-out infinite;pointer-events:none;}
+/* Contacts block */
+.s-final{background:#2F3020;border-radius:16px;padding:clamp(28px,5vw,52px);}
+.s-final--centered{display:flex;flex-direction:column;align-items:center;text-align:center;}
+.s-final__head{text-align:center;margin-bottom:0;}
+.s-final__btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:20px;}
+.s-final__btns .s-btn{min-width:220px;justify-content:center;}
+.s-final__btn-call,.s-final__btn-tel{border:2px solid var(--c-accent)!important;background:rgba(255,255,255,0.07)!important;color:#f5f0e8!important;display:flex!important;align-items:center;gap:8px;position:relative;overflow:hidden;}
+.s-final__btn-call:hover,.s-final__btn-tel:hover{background:rgba(255,255,255,0.14)!important;}
+.s-final__ico{width:18px;height:18px;flex-shrink:0;}
+.s-final__btn-call .s-final__ico{color:#e03535;}
+.s-final__btn-tel .s-final__ico{color:#e03535;}
+.s-final__info{margin-top:28px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.s-final__tel-row{display:flex;align-items:baseline;gap:8px;margin:0;}
+.s-final__tel-lbl{font-size:.9rem;color:rgba(245,240,232,0.55);}
+.s-final__tel{font:700 1.4rem/1 var(--f-display);color:#f5f0e8;text-decoration:none;letter-spacing:-.01em;}
+.s-final__tel:hover{color:var(--c-accent);}
+.s-final__addr{font-size:.95rem;color:rgba(245,240,232,0.55);}
+@media(max-width:600px){.s-final__btns{flex-direction:column;align-items:stretch;}.s-final__btns .s-btn{min-width:0;width:100%;justify-content:center;}}
+/* Dialog */
+.s-dialog{border:none;border-radius:14px;padding:32px 28px;background:var(--c-surface);color:var(--c-ink);box-shadow:0 12px 56px rgba(0,0,0,0.55);max-width:420px;width:90vw;}
+.s-dialog::backdrop{background:rgba(0,0,0,0.65);}
+.s-dialog__head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.s-dialog__title{font:600 1.15rem/1.3 var(--f-display);margin:0;}
+.s-dialog__close{background:none;border:none;color:var(--c-ink-soft);cursor:pointer;font-size:1.5rem;line-height:1;padding:0 4px;}
+.s-dialog__close:hover{color:var(--c-ink);}
+.s-dialog__field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.s-dialog__label{font-size:.85rem;color:var(--c-ink-soft);}
+.s-dialog input,.s-dialog textarea{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:var(--c-ink);font:inherit;font-size:.95rem;padding:10px 12px;width:100%;box-sizing:border-box;}
+.s-dialog input:focus,.s-dialog textarea:focus{outline:none;border-color:var(--c-accent);}
+.s-dialog textarea{resize:vertical;min-height:80px;}
+/* Hero 50/50 columns, photo fills height */
+.s-hero{grid-template-columns:1fr 1fr !important;align-items:stretch !important;}
+.s-hero__img{margin:0;display:flex;align-items:stretch;}
+.s-hero__img img{width:100% !important;aspect-ratio:unset !important;height:100%;object-fit:cover;}
+/* Hero ghost button gold border + scroll offset */
+.s-hero .s-btn--ghost{border-color:var(--c-accent);}
+section[id]{scroll-margin-top:72px;}
+/* Hero equal-width buttons */
+.s-actions--equal{display:flex;gap:12px;flex-wrap:wrap;}
+.s-actions--equal .s-btn{flex:1;text-align:center;justify-content:center;}
+/* Photos spacing fix */
+.s-section .s-photos{padding-top:0;}
+/* Dock */
+.s-dock{position:fixed;bottom:0;left:0;right:0;z-index:90;display:none;padding:10px 16px max(12px,env(safe-area-inset-bottom));background:var(--c-surface);border-top:1px solid rgba(255,255,255,0.08);gap:10px;}
+@media(max-width:768px){.s-dock{display:flex;}}
+.s-dock .s-btn{flex:1;justify-content:center;text-align:center;}
+@media(max-width:768px){body{padding-bottom:72px;}}
+/* Facts/trust bar */
+.s-facts{background:#2F3020;border-radius:14px;border-top:none!important;border-bottom:none!important;margin:0 0 32px;padding:clamp(16px,3vw,28px) clamp(20px,4vw,40px)!important;}
+.s-facts li{color:#f5f0e8;font-weight:500;}
+.s-facts li+li{border-left-color:rgba(255,255,255,0.15)!important;}
+@media(max-width:768px){.s-facts li+li{border-top-color:rgba(255,255,255,0.15)!important;}}
 </style>
 <link rel="stylesheet" href="style-lite.css">
 </head>
@@ -33,25 +93,26 @@
 <header class="s-bar" data-s-bar>
   <a class="s-bar__brand" href="#top"><i aria-hidden="true"></i>АлРус</a>
   <div class="s-bar__right">
-    <a class="s-bar__tel" href="tel:+79898252222">+7 (989) 825-22-22</a>
-    <a class="s-btn s-btn--sm" href="#contacts">Рассчитать кухню</a>
+    <button class="s-btn s-btn--sm s-btn--ghost" data-open-callback>Заказать звонок</button>
+    <a class="s-btn s-btn--sm" href="tel:+79898252222">Позвонить нам</a>
   </div>
 </header>
 <main>
   <section class="s-hero">
     <div class="s-hero__text">
-      <p class="s-eyebrow">Кухни на заказ · Краснодар</p>
-      <h1>Кухни на заказ в Краснодаре – фасады выбираете вживую</h1>
+      <p class="s-eyebrow">Мебель на заказ · Краснодар</p>
+      <h1>Мебель на заказ в Краснодаре – фасады выбираете вживую</h1>
       <p class="s-lead">Стенд с образцами в шоуруме — видите, как цвета сочетаются между собой, до заказа. Монтажник подключает технику — сантехник не нужен отдельно.</p>
-      <div class="s-actions"><a class="s-btn" href="#contacts">Рассчитать кухню</a><a class="s-link" href="#prices">Цены</a></div>
+      <div class="s-actions s-actions--equal"><a class="s-btn s-btn--ghost" href="#prices">Наши цены</a><a class="s-btn s-btn--ghost" href="#works">Наши работы</a></div>
     </div>
-    <figure class="s-hero__img"><img class="" src="assets/hero.webp" alt="Кухня на заказ от АлРус, Краснодар" decoding="async" fetchpriority="high"></figure>
+    <figure class="s-hero__img"><img class="" src="assets/hero.png" alt="Мебель на заказ от АлРус, Краснодар" decoding="async" fetchpriority="high"></figure>
   </section>
 
   <ul class="s-facts"><li>Предварительный расчёт за день</li><li>Образцы фасадов привозим на замер</li><li>Гарантия на фурнитуру 24 месяца</li></ul>
 
   <section class="s-section" id="prices">
     <header class="s-section__head"><h2>Сколько стоит</h2><p>Точную смету считаем после замера, а прицениться можно сейчас. В цену входят корпус, фасады, столешница, фурнитура с доводчиками и монтаж.</p></header>
+    <div class="s-demo-note"><b>Это шаблонный прайс.</b> После оформления заказа мы заменим позиции и цены на ваши — из вашего прайс-листа или сайта.</div>
     <div class="s-board"><div class="s-board__group">
       <h3 class="s-board__title">Кухни, столешница кварц</h3>
       <ul class="s-board__list">
@@ -69,8 +130,7 @@
         <li class="s-board__row"><span class="s-board__name">Гардеробная<em>открытая система или комната с дверью</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">уточнить</span></li>
       </ul>
     </div></div>
-    <p class="s-note">Техника и мойка – отдельно. Угловые кухни считаем по размерам. Расчёт до замера предварительный, точная смета – после замера вместе с 3D-проектом.</p><p class="s-demo">Цены для примера. В вашем сайте будут ваши.</p>
-  </section>
+    <p class="s-note">Техника и мойка – отдельно. Угловые кухни считаем по размерам. Расчёт до замера предварительный, точная смета – после замера вместе с 3D-проектом.</p>  </section>
 
   <section class="s-section">
     <header class="s-section__head"><h2>Как заказать</h2></header>
@@ -83,7 +143,10 @@
     </ol>
   </section>
 
-  <section class="s-photos" aria-label="Фото"><figure><img class="" src="assets/photo1.webp" alt="Угловая кухня: матовые зелёные фасады до потолка" loading="lazy" decoding="async"><figcaption>Угловая кухня, матовый зелёный</figcaption></figure><figure><img class="" src="assets/photo2.webp" alt="Кухня с фасадами под дерево и деревянной столешницей" loading="lazy" decoding="async"><figcaption>Кухня: фасады под дерево</figcaption></figure><figure><img class="" src="assets/photo3.webp" alt="Шкаф-купе с зеркальными и матовыми секциями" loading="lazy" decoding="async"><figcaption>Шкаф-купе в прихожую</figcaption></figure></section>
+  <section class="s-section" id="works">
+    <header class="s-section__head"><h2>Наши работы</h2></header>
+    <div class="s-photos" aria-label="Фото"><figure><img class="" src="assets/photo1.webp" alt="Угловая кухня: матовые зелёные фасады до потолка" loading="lazy" decoding="async"><figcaption>Угловая кухня, матовый зелёный</figcaption></figure><figure><img class="" src="assets/photo2.webp" alt="Кухня с фасадами под дерево и деревянной столешницей" loading="lazy" decoding="async"><figcaption>Кухня: фасады под дерево</figcaption></figure><figure><img class="" src="assets/photo3.webp" alt="Шкаф-купе с зеркальными и матовыми секциями" loading="lazy" decoding="async"><figcaption>Шкаф-купе в прихожую</figcaption></figure><figure><img class="" src="assets/photo4.webp" alt="Угловая кухня: белый верх со стеклом, тёмный низ" loading="lazy" decoding="async"><figcaption>Угловая кухня: белый верх, тёмный низ</figcaption></figure><figure><img class="" src="assets/photo5.webp" alt="Прямая кухня в серо-бежевом, мраморная столешница" loading="lazy" decoding="async"><figcaption>Прямая кухня, мраморная столешница</figcaption></figure><figure><img class="" src="assets/photo6.webp" alt="Шкаф-купе с зеркалом и бетонными секциями, чёрный профиль" loading="lazy" decoding="async"><figcaption>Шкаф-купе: зеркало и бетонный декор</figcaption></figure></div>
+  </section>
 
   <section class="s-section">
     <header class="s-section__head"><h2>Что обещаем</h2></header>
@@ -106,22 +169,69 @@
   </section>
 
   <section class="s-section" id="contacts">
-    <header class="s-section__head"><h2>Контакты</h2></header>
-    <div class="s-contacts">
-      <dl>
-        <div><dt>Адрес</dt><dd>ул. Автолюбителей, 13, Краснодаре</dd></div>
-        <div><dt>Часы</dt><dd>Пн–Сб 10:00–18:00</dd></div>
-        <div><dt>Телефон</dt><dd><a href="tel:+79898252222">+7 (989) 825-22-22</a></dd></div>
-      </dl>
-      <div class="s-contacts__actions">
-        <a class="s-btn" href="tel:+79898252222">Рассчитать кухню</a>
-        <a class="s-btn s-btn--ghost" data-s-msg="whatsapp" href="#">WhatsApp</a>
-        
+    <div class="s-final s-final--centered">
+      <header class="s-section__head s-final__head"><h2>Контакты</h2></header>
+      <div class="s-final__btns">
+        <button class="s-btn s-btn--sm s-btn--ghost s-final__btn-call" data-open-callback>Заказать обратный звонок</button>
+        <a class="s-btn s-btn--sm" href="tel:+79898252222">Позвонить нам</a>
+      </div>
+      <div class="s-final__info">
+        <p class="s-final__tel-row"><span class="s-final__tel-lbl">Телефон</span><a class="s-final__tel" href="tel:+79898252222">+7 (989) 825-22-22</a></p>
+        <p class="s-final__addr">ул. Автолюбителей, 13 · 10:00–18:00 (уточнить у владельца)</p>
       </div>
     </div>
   </section>
 </main>
-<footer class="s-foot"><p>АлРус · Краснодаре</p><p>Кухни, шкафы, гардеробные по вашим размерам</p></footer>
+<dialog class="s-dialog" id="cb-dialog">
+  <div class="s-dialog__head">
+    <h2 class="s-dialog__title">Заявка на обратный звонок</h2>
+    <button class="s-dialog__close" data-close-dialog aria-label="Закрыть">×</button>
+  </div>
+  <div class="s-dialog__field">
+    <label class="s-dialog__label" for="cb-name">Ваше имя</label>
+    <input id="cb-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться?">
+  </div>
+  <div class="s-dialog__field">
+    <label class="s-dialog__label" for="cb-phone">Телефон <span style="color:#e03535">*</span></label>
+    <input id="cb-phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__">
+  </div>
+  <div class="s-dialog__field">
+    <label class="s-dialog__label" for="cb-note">Комментарий</label>
+    <textarea id="cb-note" name="note" placeholder="Что хотите заказать? Размеры, пожелания…"></textarea>
+  </div>
+  <button class="s-btn" id="cb-send" style="width:100%">Позвоните мне</button>
+</dialog>
+<nav class="s-dock" aria-label="Быстрые действия">
+  <button class="s-btn s-btn--ghost s-btn--sm" data-open-callback>Заказать звонок</button>
+  <a class="s-btn s-btn--sm" href="tel:+79898252222">Позвонить</a>
+</nav>
+<footer class="s-foot"><p>АлРус · Краснодар</p><p>Кухни, шкафы, гардеробные по вашим размерам</p></footer>
 <script src="style.js" defer></script>
+<script>
+(function(){
+  var dialog=document.getElementById('cb-dialog');
+  var cbSend=document.getElementById('cb-send');
+  document.querySelectorAll('[data-open-callback]').forEach(function(btn){
+    btn.addEventListener('click',function(){dialog.showModal();});
+  });
+  document.querySelectorAll('[data-close-dialog]').forEach(function(btn){
+    btn.addEventListener('click',function(){dialog.close();});
+  });
+  dialog.addEventListener('click',function(e){if(e.target===dialog)dialog.close();});
+  cbSend.addEventListener('click',function(){
+    var phone=document.getElementById('cb-phone').value.trim();
+    if(!phone){document.getElementById('cb-phone').focus();return;}
+    var name=document.getElementById('cb-name').value.trim();
+    var note=document.getElementById('cb-note').value.trim();
+    var wa=document.body.dataset.wa||'79898252222';
+    var msg='Заявка на обратный звонок'+(name?'\nИмя: '+name:'')+'\nТел: '+phone+(note?'\n'+note:'');
+    window.open('https://wa.me/'+wa+'?text='+encodeURIComponent(msg),'_blank');
+    dialog.close();
+    document.getElementById('cb-phone').value='';
+    document.getElementById('cb-name').value='';
+    document.getElementById('cb-note').value='';
+  });
+})();
+</script>
 </body>
 </html>
